@@ -20,4 +20,4 @@ jobs:
       - name: Run Deploy Script
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}
-          cd /home/alumno/lemp-sites/joaquin_castellano/ci-cd-devops && git pull origin main
+          cd ~/lemp-sites/joaquin_castellano/ci-cd-devops/ && git pull origin main
