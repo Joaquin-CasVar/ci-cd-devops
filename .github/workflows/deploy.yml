@@ -17,13 +17,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Mostrar que ve el server
+      - name: Run Deploy Script
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}
           ls -la
-
-
-      - name: Run Deploy Script
-        run: |
-          
-          cd lemp-sites/joaquin_castellano/ci-cd-devops/ && git pull origin main
+          cd ../
+          ls -la
+          cd ~/lemp-sites/joaquin_castellano/ci-cd-devops/ && git pull origin main
