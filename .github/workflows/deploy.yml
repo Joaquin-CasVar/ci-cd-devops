@@ -21,6 +21,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}
           ls -la
-          cd ../
+          cd ~
           ls -la
           cd ~/lemp-sites/joaquin_castellano/ci-cd-devops/ && git pull origin main
