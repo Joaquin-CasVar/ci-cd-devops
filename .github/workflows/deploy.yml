@@ -10,11 +10,6 @@ jobs:
     name: Deploy to Server
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        shell: bash
-        working-directory: ~/lemp-sites/joaquin_castellano/ci-cd-devops
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,6 +21,7 @@ jobs:
 
       - name: Run Deploy Script
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}               
-          pwd
-          git pull origin main
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            cd ~/lemp-sites/joaquin_castellano/ci-cd-devops &&
+            git pull origin main
+          "
