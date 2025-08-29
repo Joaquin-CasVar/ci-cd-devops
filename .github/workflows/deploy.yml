@@ -10,6 +10,11 @@ jobs:
     name: Deploy to Server
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        shell: bash
+        working-directory: ~/lemp-sites/joaquin_castellano/ci-cd-devops
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
