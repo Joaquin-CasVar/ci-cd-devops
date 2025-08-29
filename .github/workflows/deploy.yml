@@ -23,4 +23,5 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}               
           pwd
+          git status
           git pull origin main
