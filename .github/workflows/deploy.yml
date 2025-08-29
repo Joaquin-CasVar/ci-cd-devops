@@ -1,3 +1,5 @@
+name: CD - Deploy con Git Pull
+
 on:
   push:
     branches:
@@ -20,4 +22,7 @@ jobs:
       - name: Run Deploy Script
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}
-          git pull origin main
+          "
+            cd ~/lemp-sites/nombre_user/proyecto &&
+            git pull origin main
+          "
