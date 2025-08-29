@@ -22,11 +22,5 @@ jobs:
       - name: Run Deploy Script
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}
-          ls -la
-          cd ..
-          ls -la
-          cd ..
-          ls -la
-          cd ..
-          ls -la
+          pwd
           cd ~/lemp-sites/joaquin_castellano/ci-cd-devops
